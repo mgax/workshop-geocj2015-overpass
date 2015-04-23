@@ -125,6 +125,14 @@ out;
 * `out skel qt;` înseamnă "dă-mi rezultate fără tag-uri și nesortate" (mai rapid)
 
 
+## Hartă web
+
+<iframe
+  src="https://rawgit.com/mgax/workshop-geocj2015-overpass/master/parks.html"
+  style="border: 1px solid #888; height: 300px; width: 500px"
+  ></iframe>
+
+
 ## QGIS
 
 * open geojson file
