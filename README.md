@@ -2,6 +2,20 @@
 
 http://overpass-turbo.eu/
 
+### query "tot"
+```
+(
+  node({{bbox}});
+  <;
+);
+out meta;
+```
+
+* `<;` înseamnă "ia obiectele părinte" (poligoane și relații care conțin noduri
+  din zonă)
+
+### filtru după tag
+
 ```
 node
   [amenity=cafe]
@@ -38,17 +52,13 @@ out;
 out;
 ```
 
-### query "tot"
+### expresie regulată
 ```
-(
-  node({{bbox}});
-  <;
-);
-out meta;
+node
+  [amenity~"cafe|bar|restaurant"]
+  ({{bbox}});
+out;
 ```
-
-* `<;` înseamnă "ia obiectele părinte" (poligoane și relații care conțin noduri
-  din zonă)
 
 ### query "unde sunt?"
 
@@ -76,6 +86,37 @@ out;
 node
   [amenity=cafe]
   (area);
+out;
+```
+
+### zone
+```
+area
+  [place=city]
+  [name="Cluj-Napoca"];
+out;
+
+(
+  way[leisure~"park|garden"](area);
+  >;
+);
+out;
+```
+
+### structuri complexe
+```
+area
+  [place=city]
+  [name="Cluj-Napoca"];
+out;
+
+(
+  relation
+    [route=bus]
+    [ref=22]
+    (area);
+  >;
+);
 out;
 ```
 
