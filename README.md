@@ -111,6 +111,37 @@ area[place=city][name="Cluj-Napoca"];
 out;
 ```
 
+```
+area[name="România"];
+
+way
+  (area)
+  [power=line]
+  [voltage~"...000"];
+out geom;
+```
+
+### styling
+```
+area[name="România"];
+
+way
+  (area)
+  [power=line]
+  [voltage~"...000"];
+out geom;
+
+{{style:
+line[voltage=400000]
+{ color:red; }
+
+line[voltage=220000]
+{ color:yellow; }
+
+}}
+```
+
+
 ### Optimizare
 
 * `out skel qt;` înseamnă "dă-mi rezultate fără tag-uri și nesortate" (mai rapid)
