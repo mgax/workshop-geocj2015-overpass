@@ -78,10 +78,7 @@ out;
 
 ### limit query to city
 ```
-area
-  [place=city]
-  [name="Cluj-Napoca"];
-out;
+area[place=city][name="Cluj-Napoca"];
 
 node
   [amenity=cafe]
@@ -91,10 +88,7 @@ out;
 
 ### zone
 ```
-area
-  [place=city]
-  [name="Cluj-Napoca"];
-out;
+area[place=city][name="Cluj-Napoca"];
 
 (
   way[leisure~"park|garden"](area);
@@ -105,10 +99,7 @@ out;
 
 ### structuri complexe
 ```
-area
-  [place=city]
-  [name="Cluj-Napoca"];
-out;
+area[place=city][name="Cluj-Napoca"];
 
 (
   relation
