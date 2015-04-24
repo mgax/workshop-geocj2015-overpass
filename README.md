@@ -168,10 +168,10 @@ node[population>100000] { symbol-size: 12; }
 
 ## Hartă web
 
-<iframe
-  src="https://rawgit.com/mgax/workshop-geocj2015-overpass/master/parks.html"
-  style="border: 1px solid #888; height: 300px; width: 500px"
-  ></iframe>
+Hartă Leaflet care afișează rezultate din Overpass. Putem scrie orice query
+în variabila `query`.
+
+[https://github.com/mgax/workshop-geocj2015-overpass/blob/master/parks.html]()
 
 
 ## QGIS
