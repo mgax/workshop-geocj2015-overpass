@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
 <style>
-@import url("https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css");
 html, body, #map { height: 100%; margin: 0; }
 </style>
 
@@ -14,7 +14,7 @@ html, body, #map { height: 100%; margin: 0; }
 <script>
 
 var api = 'http://overpass-api.de/api/interpreter';
-var query = 'area["place"="ciunui queryty"]["name"="Cluj-Napoca"];out body;(way["leisure"~"park|garden"](area);>;);out body;';
+var query = 'area["place"="city"]["name"="Cluj-Napoca"];node[amenity=cafe](area);out;';
 
 var map = L.map('map');
 
