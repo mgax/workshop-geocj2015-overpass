@@ -2,7 +2,7 @@
 
 http://overpass-turbo.eu/
 
-![overpass](screenshots/overpass.jpg)
+![overpass](screenshots/overpass.png)
 
 
 ### filtru după tag
