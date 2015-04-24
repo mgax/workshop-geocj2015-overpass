@@ -96,7 +96,8 @@ Din cauza simplificărilor făcute de Overpass Turbo, la zoom out, unele segment
 de linie sunt reprezentate ca noduri, de aceea regulile de simbolizare operează
 și pe noduri și pe linii.
 
-**Exercițiu**: simbolizați liniile de tensiune din județul Cluj.
+**Exercițiu**: simbolizați rețeaua de autostrăzi (`highway=motorway`) din
+România și colorați fiecare autostradă (A1, A2...) diferit.
 
 
 ### Localități după tip și mărime

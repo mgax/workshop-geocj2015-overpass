@@ -103,5 +103,8 @@ out center;
 Nu mai cerem elementele copil de la poligoane (nodurile de pe contur), vrem
 doar centrele.
 
+**Exercițiu**: extrageți centrele aeroporturilor din România (poligoane
+`aeroway=aerodrome`).
+
 **Exercițiu**: extrageți centrele localităților din județul Timișoara
 (`[place~"city|town|village"]`). Nu uitați să modificați și `area` de căutare.
