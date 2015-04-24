@@ -25,8 +25,8 @@ La expresia regulată am adăugat regulile `^` și `$` (început și sfârșit d
 text), ca să primim rezultate exacte `pub` și `cafe`, fără rezultate de tipul
 `amenity=public_building`, care conțin în parte expresia căutată.
 
-Exercițiu: simbolizați spitalele din Cluj. Cele care au cameră de gardă să fie
-colorate cu roșu, restul albastru.
+**Exercițiu**: simbolizați spitalele din Cluj. Cele care au cameră de gardă să
+fie colorate cu roșu, restul albastru.
 
 
 ### Linie de autobuz
@@ -55,7 +55,7 @@ out;
 Ascundem toate nodurile, mai puțin cele care fac parte din relație, și sunt
 marcate ca stație.
 
-Exercițiu: simbolizați magistrala de metrou M2 din București.
+**Exercițiu**: simbolizați magistrala de metrou M2 din București.
 
 
 ### Rețeaua de înaltă tensiune
@@ -92,7 +92,7 @@ Din cauza simplificărilor făcute de Overpass Turbo, la zoom out, unele segment
 de linie sunt reprezentate ca noduri, de aceea regulile de simbolizare operează
 și pe noduri și pe linii.
 
-Exercițiu: simbolizați liniile de tensiune din județul Cluj.
+**Exercițiu**: simbolizați liniile de tensiune din județul Cluj.
 
 
 ### Localități după tip și mărime
@@ -117,4 +117,4 @@ out;
 
 Cuoarea reprezintă tipul localității, mărimea reprezintă populația.
 
-Exercițiu: simbolizați localitățile din alt județ.
+**Exercițiu**: simbolizați localitățile din alt județ.

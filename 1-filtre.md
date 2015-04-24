@@ -18,7 +18,7 @@ out;
 În tab-ul "data" din dreapta putem vedea rezultatul în format OpenStreetMap
 XML.
 
-Exercițiu: extrageți
+**Exercițiu**: extrageți
 [restaurantele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant),
 [hotelurile](http://wiki.openstreetmap.org/wiki/Tag:tourism%3Dhotel) și
 [spitalele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dhospital) din
@@ -36,7 +36,7 @@ out;
 
 ![amenity=cafe,wheelchair=yes](screenshots/amenity=cafe,wheelchair=yes.png)
 
-Exercițiu: extrageți spitalele care au cameră de gardă (`emergency=yes`).
+**Exercițiu**: extrageți spitalele care au cameră de gardă (`emergency=yes`).
 
 
 ### query "sau"
@@ -54,7 +54,11 @@ out;
 
 ![amenity=cafe+tourism=hotel](screenshots/amenity=cafe+tourism=hotel.png)
 
-Exercițiu: extrageți toate [cafenelele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe), [barurile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar), [pub-urile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub) și [cluburile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dnightclub).
+**Exercițiu**: extrageți toate
+[cafenelele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe),
+[barurile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar),
+[pub-urile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub) și
+[cluburile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dnightclub).
 
 
 ### expresie regulată
@@ -67,7 +71,8 @@ out;
 
 ![amenity~"cafe|bar|restaurant"](screenshots/amenity~"cafe|bar|restaurant".png)
 
-Exercițiu: La fel ca punctul precedent, scris sub formă de expresie regulată
+**Exercițiu**: La fel ca punctul precedent, scris sub formă de expresie
+regulată
 
 
 ### query "tot"
