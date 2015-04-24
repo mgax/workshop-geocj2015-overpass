@@ -95,4 +95,5 @@ out;
 ![unde mă aflu?](screenshots/where.png)
 
 Returnează toate poligoanele care conțin centrul hărții vizibile (clădiri,
-teren, regiuni administrative)
+teren, regiuni administrative). Am cerut rezultatele în format JSON ca să fie
+mai ușor de citit.
