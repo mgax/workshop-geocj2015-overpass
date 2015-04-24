@@ -50,7 +50,7 @@ out;
 }}
 ```
 
-![Autobuzul 27, simbolizat](mapcss-bus27.png)
+![Autobuzul 27, simbolizat](screenshots/mapcss-bus27.png)
 
 Ascundem toate nodurile, mai puțin cele care fac parte din relație, și sunt
 marcate ca stație.

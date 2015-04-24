@@ -54,7 +54,7 @@ area[place=city][name="Cluj-Napoca"];
 out;
 ```
 
-![Parcuri din Cluj](cluj-leisure=park.png)
+![Parcuri din Cluj](screenshots/cluj-leisure=park.png)
 
 Căutăm obiecte de tip "way" poligoane care au tag `leisure=park`.
 
@@ -79,7 +79,7 @@ area[place=city][name="Cluj-Napoca"];
 out;
 ```
 
-![Autobuzul 27](cluj-route=bus,ref=27.png)
+![Autobuzul 27](screenshots/cluj-route=bus,ref=27.png)
 
 Plecând de la relația `[route=bus][ref=27]`, cerem toate obiectele copil
 (way-uri și noduri, adică traseul și stațiile).
@@ -97,6 +97,8 @@ way
   (area);
 out center;
 ```
+
+![Centrele parcurilor din Cluj](screenshots/cluj-leisure=park-center.png)
 
 Nu mai cerem elementele copil de la poligoane (nodurile de pe contur), vrem
 doar centrele.
