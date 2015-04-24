@@ -149,7 +149,7 @@ out;
 
 {{style:
 
-node[place=village] { color: steelblue; }
+node[place=village] { color: brown; }
 node[place=town] { color: blue; }
 node[place=city] { color: red; }
 node { symbol-size: 2; }
