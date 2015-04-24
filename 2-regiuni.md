@@ -20,6 +20,8 @@ out;
 
 * `>;` înseamnă "ia obiectele copil" (nodurile care formează poligonul)
 
+Exercițiu: extrageți conturul altor localități.
+
 
 ### limită query la o regiune
 ```
@@ -36,6 +38,8 @@ out;
 Definim `area` ca limitele orașului Cluj și îl folosim ca filtru spațial pentru
 noduri.
 
+Exercițiu: extrageți hotelurile din Cluj.
+
 
 ### zone
 ```
@@ -43,34 +47,22 @@ area[place=city][name="Cluj-Napoca"];
 
 (
   way
-    [leisure~"park|garden"]
+    [leisure=park]
     (area);
   >;
 );
 out;
 ```
 
-![Parcuri din Cluj](cluj-[leisure~"park|garden"].png)
+![Parcuri din Cluj](cluj-leisure=park.png)
 
-Căutăm obiecte de tip "way" (linii, poligoane) care au tag `leisure=park` sau
-`leisure=garden`.
+Căutăm obiecte de tip "way" poligoane care au tag `leisure=park`.
 
 Multe din rezultatele care apar ca puncte sunt de fapt poligoane, dar sunt
 afișate ca puncte, din cauza simplificărilor făcute de viewer-ul din Overpass
 Turbo. Datele exportate vor fi de tip poligon.
 
-
-### centrele poligoanelor
-```
-area[place=city][name="Cluj-Napoca"];
-
-way
-  [leisure~"park|garden"]
-  (area);
-out center;
-```
-
-Nu mai cerem elementele copil de la poligoane (nodurile), vrem doar centrele.
+Exercițiu: extrageți și grădinile (`leisure=garden`) în același query.
 
 
 ### structuri complexe
@@ -91,3 +83,23 @@ out;
 
 Plecând de la relația `[route=bus][ref=27]`, cerem toate obiectele copil
 (way-uri și noduri, adică traseul și stațiile).
+
+Exercițiu: extrageți magistrala de metrou
+[M2](http://www.openstreetmap.org/relation/2947020) din București.
+
+
+### centrele poligoanelor
+```
+area[place=city][name="Cluj-Napoca"];
+
+way
+  [leisure=park]
+  (area);
+out center;
+```
+
+Nu mai cerem elementele copil de la poligoane (nodurile de pe contur), vrem
+doar centrele.
+
+Exercițiu: extrageți centrele localităților din județul Timișoara
+(`[place~"city|town|village"]`). Nu uitați să modificați și `area` de căutare.
