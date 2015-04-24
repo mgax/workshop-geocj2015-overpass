@@ -2,17 +2,7 @@
 
 http://overpass-turbo.eu/
 
-### query "tot"
-```
-(
-  node({{bbox}});
-  <;
-);
-out meta;
-```
-
-* `<;` înseamnă "ia obiectele părinte" (poligoane și relații care conțin noduri
-  din zonă)
+![overpass](screenshots/overpass.jpg)
 
 ### filtru după tag
 
@@ -23,12 +13,14 @@ node
 out;
 ```
 
-![overpass - cafenele](screenshots/overpass.jpg)
+![amenity=cafe](screenshots/amenity=cafe.png)
 
-* ne uităm la datele osm xml
-* export - geojson
-* open in geojson.io
-* export - save as gist
+În tab-ul "data" din dreapta putem vedea rezultatul în format OpenStreetMap
+XML.
+
+Exercițiu: extrageți
+[restaurantele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) și
+[hotelurile](http://wiki.openstreetmap.org/wiki/Tag:tourism%3Dhotel) din zonă.
 
 ### query "și"
 ```
@@ -59,5 +51,18 @@ node
   ({{bbox}});
 out;
 ```
+
+### query "tot"
+```
+(
+  node({{bbox}});
+  <;
+);
+out meta;
+```
+
+Returnează toate datele din regiunea vizibilă. Operatorul `<;` înseamnă "ia
+obiectele părinte" (poligoane și relații care conțin noduri din zonă)
+
 
 ### query "unde sunt?"

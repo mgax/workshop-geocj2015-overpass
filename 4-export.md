@@ -1,5 +1,9 @@
 ## Overpass - export
 
+* export - geojson
+* open in geojson.io
+* export - save as gist
+
 ### Hartă web
 
 Hartă Leaflet care afișează rezultate din Overpass. Putem scrie orice query
