@@ -4,8 +4,8 @@ http://overpass-turbo.eu/
 
 ![overpass](screenshots/overpass.jpg)
 
-### filtru după tag
 
+### filtru după tag
 ```
 node
   [amenity=cafe]
@@ -19,8 +19,11 @@ out;
 XML.
 
 Exercițiu: extrageți
-[restaurantele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) și
-[hotelurile](http://wiki.openstreetmap.org/wiki/Tag:tourism%3Dhotel) din zonă.
+[restaurantele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant),
+[hotelurile](http://wiki.openstreetmap.org/wiki/Tag:tourism%3Dhotel) și
+[spitalele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dhospital) din
+zonă.
+
 
 ### query "și"
 ```
@@ -31,6 +34,11 @@ node
 out;
 ```
 
+![amenity=cafe,wheelchair=yes](screenshots/amenity=cafe,wheelchair=yes.png)
+
+Exercițiu: extrageți spitalele care au cameră de gardă (`emergency=yes`).
+
+
 ### query "sau"
 ```
 (
@@ -38,11 +46,16 @@ out;
     [amenity=cafe]
     ({{bbox}});
   node
-    [amenity=restaurant]
+    [tourism=hotel]
     ({{bbox}});
 );
 out;
 ```
+
+![amenity=cafe+tourism=hotel](screenshots/amenity=cafe+tourism=hotel.png)
+
+Exercițiu: extrageți toate [cafenelele](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe), [barurile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar), [pub-urile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub) și [cluburile](http://wiki.openstreetmap.org/wiki/Tag:amenity%3Dnightclub).
+
 
 ### expresie regulată
 ```
@@ -51,6 +64,11 @@ node
   ({{bbox}});
 out;
 ```
+
+![amenity~"cafe|bar|restaurant"](screenshots/amenity~"cafe|bar|restaurant".png)
+
+Exercițiu: La fel ca punctul precedent, scris sub formă de expresie regulată
+
 
 ### query "tot"
 ```
@@ -61,8 +79,20 @@ out;
 out meta;
 ```
 
+![toată informația din zonă](screenshots/all.png)
+
 Returnează toate datele din regiunea vizibilă. Operatorul `<;` înseamnă "ia
 obiectele părinte" (poligoane și relații care conțin noduri din zonă)
 
 
 ### query "unde sunt?"
+```
+[out:json];
+is_in({{center}});
+out;
+```
+
+![unde mă aflu?](screenshots/where.png)
+
+Returnează toate poligoanele care conțin centrul hărții vizibile (clădiri,
+teren, regiuni administrative)
