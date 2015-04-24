@@ -5,7 +5,7 @@
 Hartă Leaflet care afișează rezultate din Overpass. Putem scrie orice query
 în variabila `query`.
 
-[https://github.com/mgax/workshop-geocj2015-overpass/blob/master/parks.html]()
+[parks.html]()
 
 
 ### QGIS
