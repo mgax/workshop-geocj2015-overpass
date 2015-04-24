@@ -1,6 +1,10 @@
 ## Overpass Turbo - simbolizare
 
-http://wiki.openstreetmap.org/wiki/Overpass_turbo/MapCSS
+Overpass Turbo (interfața de rulat query-uri și vizualizat rezultate) poate să
+simbolizeze rezultatul conform unor reguli definite de noi. Sintaxa, MapCSS,
+este [explicată pe
+wiki](http://wiki.openstreetmap.org/wiki/Overpass_turbo/MapCSS).
+
 
 ### Cafenele, pub-uri
 ```

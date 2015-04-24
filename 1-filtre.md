@@ -1,6 +1,9 @@
 ## Overpass - filtrare
 
-http://overpass-turbo.eu/
+[Overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) este un
+serviciu de interogat date în OpenStreetMap. [Overpass
+Turbo](http://overpass-turbo.eu/) este interfața pentru rulat query-uri și
+vizualizat rezultate.
 
 ![overpass](screenshots/overpass.png)
 
