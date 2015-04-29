@@ -23,7 +23,7 @@ Hartă Leaflet care afișează rezultate din Overpass. Codul este generic,
 afișează orice rezultate primim de la Overpass, în urma query-ului. Rezultatele
 vor fi tot timpul la zi cu actualizările din OpenStreetMap.
 
-[parks.html]()
+[cafes.html](https://github.com/mgax/workshop-geocj2015-overpass/blob/master/cafes.html)
 
 ![Cafenele în Leaflet](screenshots/leaflet-cafes.png)
 
