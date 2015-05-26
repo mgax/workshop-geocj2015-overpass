@@ -22,7 +22,8 @@ interfața grafică [Overpass Turbo](http://overpass-turbo.eu/).
 
 Datele spațiale, în mod normal, sunt reprezentate folosind câteva tipuri de
 geometrie standard: punct, linie, poligon, multipoligon, etc. În OpenStreetMap
-datele sunt reprezentate altfel: node, way, relation.
+datele sunt reprezentate altfel: [node, way,
+relation](http://wiki.openstreetmap.org/wiki/Elements).
 
 * *Node* reprezintă un punct în spațiu cu coordonate "latitudine" și
   "longitudine" (WGS84). Poate fi un obiectiv de sine stătător, cum ar fi un
@@ -37,12 +38,18 @@ datele sunt reprezentate altfel: node, way, relation.
   drumul e reprezentat prin *way*-uri și stațiile sunt reprezentate prin
   *node*-uri).
 
-Orice obiect (*node*, *way*, *relation*) poate avea tag-uri atașate. Tag-urile
-ne spun ce reprezintă acel obiect. De exemplu, un stâlp de înaltă tensiune va
-avea tag-ul `power=tower` (cheia `power` și valoarea `tower`). Aceleași noduri
-pot face parte dintr-un *way* care reprezintă o linie de înaltă tensiune și
-care va avea tag-ul `power=line`. Linia poate avea alte tag-uri, de exemplu
-`voltage=400000`, pentru linii de 400KV.
+Orice obiect (*node*, *way*, *relation*) poate avea
+[tag-uri](http://wiki.openstreetmap.org/wiki/Tags) atașate. Tag-urile ne spun
+ce reprezintă acel obiect. De exemplu, un stâlp de înaltă tensiune va avea
+tag-ul [power=tower](http://wiki.openstreetmap.org/wiki/Tag:power%3Dtower)
+(cheia `power` și valoarea `tower`). Aceleași noduri pot face parte dintr-un
+*way* care reprezintă o linie de înaltă tensiune și care va avea tag-ul
+[power=line](http://wiki.openstreetmap.org/wiki/Tag:power%3Dline). Linia poate
+avea alte tag-uri, de exemplu
+[voltage=](http://wiki.openstreetmap.org/wiki/Key:voltage)400000, pentru linii
+de 400KV. Tag-urile sunt documentate pe wiki-ul OpenStreetMap în secțiunea [Map
+Features](http://wiki.openstreetmap.org/wiki/Map_Features). Ne vom folosi de
+aceste tag-uri ca să filtrăm datele care ne interesează.
 
 
 ## Filtrare
