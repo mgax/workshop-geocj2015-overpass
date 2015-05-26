@@ -48,12 +48,11 @@ care va avea tag-ul `power=line`. Linia poate avea alte tag-uri, de exemplu
 ## Filtrare
 
 ### filtru după tag
-```
-node
-  [amenity=cafe]
-  ({{bbox}});
-out;
-```
+
+    node
+      [amenity=cafe]
+      ({{bbox}});
+    out;
 
 ![amenity=cafe](screenshots/amenity=cafe.png)
 
@@ -68,13 +67,12 @@ zonă.
 
 
 ### query "și"
-```
-node
-  [amenity=cafe]
-  [wheelchair=yes]
-  ({{bbox}});
-out;
-```
+
+    node
+      [amenity=cafe]
+      [wheelchair=yes]
+      ({{bbox}});
+    out;
 
 ![amenity=cafe,wheelchair=yes](screenshots/amenity=cafe,wheelchair=yes.png)
 
@@ -82,17 +80,16 @@ out;
 
 
 ### query "sau"
-```
-(
-  node
-    [amenity=cafe]
-    ({{bbox}});
-  node
-    [tourism=hotel]
-    ({{bbox}});
-);
-out;
-```
+
+    (
+      node
+        [amenity=cafe]
+        ({{bbox}});
+      node
+        [tourism=hotel]
+        ({{bbox}});
+    );
+    out;
 
 ![amenity=cafe+tourism=hotel](screenshots/amenity=cafe+tourism=hotel.png)
 
@@ -104,12 +101,11 @@ out;
 
 
 ### expresie regulată
-```
-node
-  [amenity~"cafe|bar|restaurant"]
-  ({{bbox}});
-out;
-```
+
+    node
+      [amenity~"cafe|bar|restaurant"]
+      ({{bbox}});
+    out;
 
 ![amenity~"cafe|bar|restaurant"](screenshots/amenity~"cafe|bar|restaurant".png)
 
@@ -118,13 +114,12 @@ regulată
 
 
 ### query "tot"
-```
-(
-  node({{bbox}});
-  <;
-);
-out meta;
-```
+
+    (
+      node({{bbox}});
+      <;
+    );
+    out meta;
 
 ![toată informația din zonă](screenshots/all.png)
 
@@ -133,11 +128,10 @@ obiectele părinte" (poligoane și relații care conțin noduri din zonă)
 
 
 ### query "unde sunt?"
-```
-[out:json];
-is_in({{center}});
-out;
-```
+
+    [out:json];
+    is_in({{center}});
+    out;
 
 ![unde mă aflu?](screenshots/where.png)
 
@@ -154,14 +148,13 @@ pentru a defini limite geografice.
 
 
 ### query după numele unui loc
-```
-relation
-  [place=city]
-  [name="Cluj-Napoca"];
 
->;
-out;
-```
+    relation
+      [place=city]
+      [name="Cluj-Napoca"];
+
+    >;
+    out;
 
 ![Poligon Cluj](screenshots/place=city,name="Cluj-Napoca".png)
 
@@ -171,14 +164,13 @@ out;
 
 
 ### limită query la o regiune
-```
-area[place=city][name="Cluj-Napoca"];
 
-node
-  [amenity=cafe]
-  (area);
-out;
-```
+    area[place=city][name="Cluj-Napoca"];
+
+    node
+      [amenity=cafe]
+      (area);
+    out;
 
 ![Cafenele din Cluj](screenshots/cluj-amenity=cafe.png)
 
@@ -189,17 +181,16 @@ noduri.
 
 
 ### zone
-```
-area[place=city][name="Cluj-Napoca"];
 
-(
-  way
-    [leisure=park]
-    (area);
-  >;
-);
-out;
-```
+    area[place=city][name="Cluj-Napoca"];
+
+    (
+      way
+        [leisure=park]
+        (area);
+      >;
+    );
+    out;
 
 ![Parcuri din Cluj](screenshots/cluj-leisure=park.png)
 
@@ -213,18 +204,17 @@ Turbo. Datele exportate vor fi de tip poligon.
 
 
 ### structuri complexe
-```
-area[place=city][name="Cluj-Napoca"];
 
-(
-  relation
-    [route=bus]
-    [ref=27]
-    (area);
-  >;
-);
-out;
-```
+    area[place=city][name="Cluj-Napoca"];
+
+    (
+      relation
+        [route=bus]
+        [ref=27]
+        (area);
+      >;
+    );
+    out;
 
 ![Autobuzul 27](screenshots/cluj-route=bus,ref=27.png)
 
@@ -236,14 +226,13 @@ Plecând de la relația `[route=bus][ref=27]`, cerem toate obiectele copil
 
 
 ### centrele poligoanelor
-```
-area[place=city][name="Cluj-Napoca"];
 
-way
-  [leisure=park]
-  (area);
-out center;
-```
+    area[place=city][name="Cluj-Napoca"];
+
+    way
+      [leisure=park]
+      (area);
+    out center;
 
 ![Centrele parcurilor din Cluj](screenshots/cluj-leisure=park-center.png)
 
@@ -266,18 +255,17 @@ wiki](http://wiki.openstreetmap.org/wiki/Overpass_turbo/MapCSS).
 
 
 ### Cafenele, pub-uri
-```
-area[place=city][name="Cluj-Napoca"];
 
-node[amenity~"^cafe|pub$"](area);
-out;
+    area[place=city][name="Cluj-Napoca"];
 
-{{style:
-  node { symbol-size: 8; }
-  node[amenity=cafe] { color: blue; fill-color: blue; }
-  node[amenity=pub] { color: green; fill-color: green; }
-}}
-```
+    node[amenity~"^cafe|pub$"](area);
+    out;
+
+    {{style:
+      node { symbol-size: 8; }
+      node[amenity=cafe] { color: blue; fill-color: blue; }
+      node[amenity=pub] { color: green; fill-color: green; }
+    }}
 
 ![Cafenele și pub-uri](screenshots/mapcss-cafe-pub.png)
 
@@ -293,25 +281,24 @@ fie colorate cu roșu, restul albastru.
 
 
 ### Linie de autobuz
-```
-area[place=city][name="Cluj-Napoca"];
 
-(
-  relation
-    [route=bus]
-    [ref=27]
-    (area);
-  >;
-);
-out;
+    area[place=city][name="Cluj-Napoca"];
 
-{{style:
-  node { symbol-shape: none; }
-  relation node[public_transport=stop_position] {
-    symbol-shape: circle; symbol-size: 5;
-  }
-}}
-```
+    (
+      relation
+        [route=bus]
+        [ref=27]
+        (area);
+      >;
+    );
+    out;
+
+    {{style:
+      node { symbol-shape: none; }
+      relation node[public_transport=stop_position] {
+        symbol-shape: circle; symbol-size: 5;
+      }
+    }}
 
 ![Autobuzul 27, simbolizat](screenshots/mapcss-bus27.png)
 
@@ -322,29 +309,28 @@ marcate ca stație.
 
 
 ### Rețeaua de înaltă tensiune
-```
-area[name="România"];
 
-way
-  (area)
-  [power=line]
-  [voltage~"...000"];
-out geom;
+    area[name="România"];
 
-{{style:
-  node[voltage=400000],
-  line[voltage=400000]
-  { color:red; fill-color: red; }
+    way
+      (area)
+      [power=line]
+      [voltage~"...000"];
+    out geom;
 
-  node[voltage=220000],
-  line[voltage=220000]
-  { color:blue; fill-color: blue; }
+    {{style:
+      node[voltage=400000],
+      line[voltage=400000]
+      { color:red; fill-color: red; }
 
-  node[voltage=110000],
-  line[voltage=110000]
-  { color:green; fill-color: green; }
-}}
-```
+      node[voltage=220000],
+      line[voltage=220000]
+      { color:blue; fill-color: blue; }
+
+      node[voltage=110000],
+      line[voltage=110000]
+      { color:green; fill-color: green; }
+    }}
 
 ![Linii de înaltă tensiune](screenshots/mapcss-power.png)
 
@@ -360,22 +346,21 @@ România și colorați fiecare autostradă (A1, A2...) diferit.
 
 
 ### Localități după tip și mărime
-```
-area[place=county][name="Cluj"];
 
-node(area)[place~"city|town|village"];
-out;
+    area[place=county][name="Cluj"];
 
-{{style:
-  node { symbol-size: 2; }
-  node[population>100] { symbol-size: 4; }
-  node[population>10000] { symbol-size: 8; }
-  node[population>100000] { symbol-size: 12; }
-  node[place=village] { color: brown; }
-  node[place=town] { color: blue; }
-  node[place=city] { color: red; }
-}}
-```
+    node(area)[place~"city|town|village"];
+    out;
+
+    {{style:
+      node { symbol-size: 2; }
+      node[population>100] { symbol-size: 4; }
+      node[population>10000] { symbol-size: 8; }
+      node[population>100000] { symbol-size: 12; }
+      node[place=village] { color: brown; }
+      node[place=town] { color: blue; }
+      node[place=city] { color: red; }
+    }}
 
 ![Localități](screenshots/mapcss-places.png)
 
