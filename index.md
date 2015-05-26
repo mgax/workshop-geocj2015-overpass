@@ -1,8 +1,8 @@
 ---
 layout: default
+title: Preluarea datelor din OpenStreetMap folosind Overpass
 ---
 {% raw %}
-
 
 Baza de date OpenStreetMap conține o varietate și cantiate imensă de informații
 spațiale, actualizate de voluntari, și disponibile sub o licență liberă. În
