@@ -1,3 +1,8 @@
+---
+layout: default
+---
+{% raw %}
+
 ## Overpass - filtrare
 
 [Overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) este un
@@ -387,4 +392,3 @@ proiectului curent va deveni "EPSG:3857" – Web Mercator – proiecția folosi
 majoritatea slippy map-urilor.
 
 ![Cafenele în QGIS](screenshots/qgis-cafes.png)
-
