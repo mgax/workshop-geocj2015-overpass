@@ -3,15 +3,49 @@ layout: default
 ---
 {% raw %}
 
-## Overpass - filtrare
 
-[Overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) este un
-serviciu de interogat date în OpenStreetMap. [Overpass
-Turbo](http://overpass-turbo.eu/) este interfața pentru rulat query-uri și
-vizualizat rezultate.
+Baza de date OpenStreetMap conține o varietate și cantiate imensă de informații
+spațiale, actualizate de voluntari, și disponibile sub o licență liberă. În
+acest articol vedem cum putem prelua date din OpenStreetMap filtrând exact ce
+avem nevoie.
+
+Vom folosi serviciul [Overpass
+API](http://wiki.openstreetmap.org/wiki/Overpass_API), un motor de interogare
+pentru baza de date OpenStreetMap. Overpass este un serviciu web pentru
+aplicații, de aceea nu îl vom folosi direct, ci vom executa căutări prin
+interfața grafică [Overpass Turbo](http://overpass-turbo.eu/).
 
 ![overpass](screenshots/overpass.png)
 
+
+## Reprezentarea datelor în OpenStreetMap
+
+Datele spațiale, în mod normal, sunt reprezentate folosind câteva tipuri de
+geometrie standard: punct, linie, poligon, multipoligon, etc. În OpenStreetMap
+datele sunt reprezentate altfel: node, way, relation.
+
+* *Node* reprezintă un punct în spațiu cu coordonate "latitudine" și
+  "longitudine" (WGS84). Poate fi un obiectiv de sine stătător, cum ar fi un
+  stâlp de înaltă tensiune, sau poate fi parte dintr-un *way*.
+
+* *Way* este o listă de obiecte *node* și poate reprezenta o linie (de exemplu
+  o șosea) sau un inel închis (de exemplu o clădire).
+
+* *Relation* este o colecție de *node*, *way* și *relation*, și reprezintă
+  obiecte mai complexe. De exemplu, o șosea compusă din mai multe segmente
+  lipite, o clădire cu o curte interioară, sau traseul unui autobuz, unde
+  drumul e reprezentat prin *way*-uri și stațiile sunt reprezentate prin
+  *node*-uri).
+
+Orice obiect (*node*, *way*, *relation*) poate avea tag-uri atașate. Tag-urile
+ne spun ce reprezintă acel obiect. De exemplu, un stâlp de înaltă tensiune va
+avea tag-ul `power=tower` (cheia `power` și valoarea `tower`). Aceleași noduri
+pot face parte dintr-un *way* care reprezintă o linie de înaltă tensiune și
+care va avea tag-ul `power=line`. Linia poate avea alte tag-uri, de exemplu
+`voltage=400000`, pentru linii de 400KV.
+
+
+## Filtrare
 
 ### filtru după tag
 ```
@@ -111,7 +145,7 @@ Returnează toate poligoanele care conțin centrul hărții vizibile (clădiri,
 teren, regiuni administrative). Am cerut rezultatele în format JSON ca să fie
 mai ușor de citit.
 
-## Overpass - regiuni
+## Regiuni
 
 Până acum, toate query-urile noastre au fost limitate la `{{bbox}}`, regiunea
 vizibilă din hartă. Mai departe vom folosi poligoanele
@@ -223,7 +257,7 @@ doar centrele.
 (`[place~"city|town|village"]`). Nu uitați să modificați și `area` de căutare.
 
 
-## Overpass Turbo - simbolizare
+## Simbolizare
 
 Overpass Turbo (interfața de rulat query-uri și vizualizat rezultate) poate să
 simbolizeze rezultatul conform unor reguli definite de noi. Sintaxa, MapCSS,
@@ -350,7 +384,7 @@ Cuoarea reprezintă tipul localității, mărimea reprezintă populația.
 **Exercițiu**: simbolizați localitățile din alt județ.
 
 
-## Overpass - export
+## Export
 
 Putem salva rezultatele unui query în format GeoJSON. Alternativ, putem
 construi o hartă care, la fiecare încărcare, execută un query Overpass și
