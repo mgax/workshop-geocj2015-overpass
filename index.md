@@ -28,10 +28,8 @@ relation](http://wiki.openstreetmap.org/wiki/Elements).
 * *Node* reprezintă un punct în spațiu cu coordonate "latitudine" și
   "longitudine" (WGS84). Poate fi un obiectiv de sine stătător, cum ar fi un
   stâlp de înaltă tensiune, sau poate fi parte dintr-un *way*.
-
 * *Way* este o listă de obiecte *node* și poate reprezenta o linie (de exemplu
   o șosea) sau un inel închis (de exemplu o clădire).
-
 * *Relation* este o colecție de *node*, *way* și *relation*, și reprezintă
   obiecte mai complexe. De exemplu, o șosea compusă din mai multe segmente
   lipite, o clădire cu o curte interioară, sau traseul unui autobuz, unde
@@ -114,7 +112,7 @@ zonă.
       ({{bbox}});
     out;
 
-![amenity~"cafe|bar|restaurant"](screenshots/amenity~"cafe|bar|restaurant".png)
+![amenity~&#34;cafe&#124;bar&#124;restaurant&#34;](screenshots/amenity~&#34;cafe&#124;bar&#124;restaurant&#34;.png)
 
 **Exercițiu**: La fel ca punctul precedent, scris sub formă de expresie
 regulată
@@ -163,7 +161,7 @@ pentru a defini limite geografice.
     >;
     out;
 
-![Poligon Cluj](screenshots/place=city,name="Cluj-Napoca".png)
+![Poligon Cluj](screenshots/place=city,name=&#34;Cluj-Napoca&#34;.png)
 
 * `>;` înseamnă "ia obiectele copil" (nodurile care formează poligonul)
 
@@ -401,7 +399,7 @@ Hartă Leaflet care afișează rezultate din Overpass. Codul este generic,
 afișează orice rezultate primim de la Overpass, în urma query-ului. Rezultatele
 vor fi tot timpul la zi cu actualizările din OpenStreetMap.
 
-[parks.html]()
+[cafes.html](https://github.com/mgax/workshop-geocj2015-overpass/blob/master/cafes.html)
 
 ![Cafenele în Leaflet](screenshots/leaflet-cafes.png)
 
